@@ -9,7 +9,8 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "WindowManager.h"
 #include "DarkTheme.h"
-#include "LayoutManager.h"
+#include "SplitPanelManager.h"
+
 
 
 class Application : public JUCEApplication {
@@ -43,11 +44,11 @@ private:
     DarkTheme darkTheme;
 
     // those pointers and objects will be cleared automatically
-    ScopedPointer<ApplicationCommandManager> commandManager;
+    ScopedPointer<CommandManager> commandManager;
     ScopedPointer<MenuManager> menuManager;
     //object that hold all instances of Window attached to desktop, but have same other logic... (for not to duplicate instances of any useless listeners - command Manager, keys..)
     ScopedPointer<WindowManager> windowManager;
-    ScopedPointer<LayoutManager> panelManager;
+    ScopedPointer<SplitPanelManager> panelManager;
 private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Application);
 

@@ -17,41 +17,40 @@
 #include "WindowManager.h"
 #include "LayoutComponentContainer.h"
 #include "DraggableTabbedComponent.h"
+#include "CommandManager.h"
+class SplitPanel;  //TODO finde better solution that recreation of class
 
-//TODO hold all panels when they ar moving form one to other position
-class LayoutManager {
+class SplitPanelManager {
 public:
 
-    LayoutManager(WindowManager *wm, ApplicationCommandManager *cm, MenuManager *mm);
+    SplitPanelManager(WindowManager *wm, CommandManager *cm, MenuManager *mm);
 
-    ~LayoutManager();
-
-    LayoutComponentContainer *addTestPanel(const String &name);
+    ~SplitPanelManager();
+    StretchableLayoutManager* getLayoutManagers(SplitPanel &panel);
+    void childAdded(SplitPanel *panel);
+//    LayoutComponentContainer *addTestPanel(const String &name);
       //TODO add way to be able close itself ant check if there is need to close window
 //    bool tryToCloseDocument(Component *component);
-
 private:
 //    OwnedArray<ApplicationWindow, CriticalSection> appWindows;
 
     //TODO check do i need it att all
-    OwnedArray<LayoutComponentContainer, CriticalSection> panels;
+    OwnedArray<SplitPanel, CriticalSection> topLevelPanels;
 
     //TODO find solution how that move to some subclass when it will grow
 
-    OwnedArray<Component, CriticalSection> layouts;
-
-    OwnedArray<StretchableLayoutResizerBar, CriticalSection> layoutBars;
     OwnedArray<StretchableLayoutManager, CriticalSection> layoutManagers;
 
     //TODO looks like it must be some custom class with custom tabBar not default TabbedComponent
-    OwnedArray<DraggableTabbedComponent, CriticalSection> layoutTabPanelHolder;
+//    OwnedArray<DraggableTabbedComponent, CriticalSection> layoutTabPanelHolder;
 
 
 
 
 
 private:
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(LayoutManager)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SplitPanelManager);
+
 };
 
 

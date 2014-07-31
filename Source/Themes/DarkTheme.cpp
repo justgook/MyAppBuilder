@@ -28,7 +28,15 @@ DarkTheme::~DarkTheme() {
 
 }
 
-
+void DarkTheme::drawStretchableLayoutResizerBar (Graphics& g, int /*w*/, int /*h*/, bool /*isVerticalBar*/,
+        bool isMouseOver, bool isMouseDragging)
+{
+    if (isMouseOver || isMouseDragging){
+        g.fillAll (Colours::yellow.withAlpha (0.4f));
+    } else {
+        g.fillAll (Colours::blue);
+    }
+}
 
 Button* DarkTheme::createTabBarExtrasButton()
 {

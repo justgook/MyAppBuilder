@@ -6,70 +6,76 @@
   <MAINGROUP id="XMAoNb" name="ideTemplate">
     <GROUP id="{5CE8FDF4-EECA-AF14-7299-F795480A018C}" name="Source">
       <GROUP id="{783EE0D0-1E52-8612-E6E2-7230B6AEAA08}" name="ApiComponents">
-        <FILE id="qsXx3o" name="NodeGraphEditor.cpp" compile="1" resource="0"
+        <FILE id="kV1YRL" name="NodeGraphEditor.cpp" compile="1" resource="0"
               file="Source/ApiComponents/NodeGraphEditor.cpp"/>
-        <FILE id="yGEq2T" name="NodeGraphEditor.h" compile="0" resource="0"
+        <FILE id="YX61Ap" name="NodeGraphEditor.h" compile="0" resource="0"
               file="Source/ApiComponents/NodeGraphEditor.h"/>
       </GROUP>
-      <FILE id="yFiTOZ" name="Application.cpp" compile="1" resource="0" file="Source/Application.cpp"/>
-      <FILE id="gbVmaA" name="Application.h" compile="0" resource="0" file="Source/Application.h"/>
+      <FILE id="KX73Hc" name="Application.cpp" compile="1" resource="0" file="Source/Application.cpp"/>
+      <FILE id="zmHscg" name="Application.h" compile="0" resource="0" file="Source/Application.h"/>
       <GROUP id="{A5FDBF5A-3AD3-E292-E305-18B18248B7F7}" name="Base">
-        <FILE id="lc3HWz" name="CommandIDs.h" compile="0" resource="0" file="Source/Base/CommandIDs.h"/>
-        <GROUP id="{1617F2CD-D1B2-BAE7-0CE1-5DDDD7835888}" name="Components">
-          <FILE id="fvRQ2g" name="KeyMappingPanel.cpp" compile="1" resource="0"
+        <FILE id="JguVMQ" name="CommandIDs.h" compile="0" resource="0" file="Source/Base/CommandIDs.h"/>
+        <FILE id="p7BSwP" name="CommandManager.cpp" compile="1" resource="0"
+              file="Source/Base/CommandManager.cpp"/>
+        <FILE id="Szysw5" name="CommandManager.h" compile="0" resource="0"
+              file="Source/Base/CommandManager.h"/>
+        <GROUP id="{EFC24CC2-24DB-AC96-8717-90AF04C3E3F0}" name="Components">
+          <FILE id="KFcPPb" name="KeyMappingPanel.cpp" compile="1" resource="0"
                 file="Source/Base/Components/KeyMappingPanel.cpp"/>
-          <FILE id="ZkPf4W" name="KeyMappingPanel.h" compile="0" resource="0"
+          <FILE id="z9BXlh" name="KeyMappingPanel.h" compile="0" resource="0"
                 file="Source/Base/Components/KeyMappingPanel.h"/>
-          <FILE id="fWXd9N" name="LayoutComponentContainer.cpp" compile="1" resource="0"
+          <FILE id="aFq159" name="LayoutComponentContainer.cpp" compile="1" resource="0"
                 file="Source/Base/Components/LayoutComponentContainer.cpp"/>
-          <FILE id="zMVzT9" name="LayoutComponentContainer.h" compile="0" resource="0"
+          <FILE id="YA1bXJ" name="LayoutComponentContainer.h" compile="0" resource="0"
                 file="Source/Base/Components/LayoutComponentContainer.h"/>
         </GROUP>
-        <GROUP id="{3A9AC3CB-19FD-5451-2814-97CAF128543D}" name="Layout">
-          <FILE id="gc79VU" name="SplitPanel.cpp" compile="1" resource="0" file="Source/Base/Layout/SplitPanel.cpp"/>
-          <FILE id="he917L" name="SplitPanel.h" compile="0" resource="0" file="Source/Base/Layout/SplitPanel.h"/>
-          <FILE id="AzWtRD" name="DraggableTabbedComponent.cpp" compile="1" resource="0"
+        <GROUP id="{308682A8-16FD-ADC3-E2AD-D4B918EC3DD2}" name="Layout">
+          <FILE id="XGuy39" name="DraggableTabbedComponent.cpp" compile="1" resource="0"
                 file="Source/Base/Layout/DraggableTabbedComponent.cpp"/>
-          <FILE id="oO3Q8L" name="DraggableTabbedComponent.h" compile="0" resource="0"
+          <FILE id="vX9w46" name="DraggableTabbedComponent.h" compile="0" resource="0"
                 file="Source/Base/Layout/DraggableTabbedComponent.h"/>
+          <FILE id="xnJL89" name="SplitPanel.cpp" compile="1" resource="0" file="Source/Base/Layout/SplitPanel.cpp"/>
+          <FILE id="zTdXf4" name="SplitPanel.h" compile="0" resource="0" file="Source/Base/Layout/SplitPanel.h"/>
         </GROUP>
-        <FILE id="rS6xzH" name="LayoutManager.cpp" compile="1" resource="0"
-              file="Source/Base/LayoutManager.cpp"/>
-        <FILE id="cOXSpi" name="LayoutManager.h" compile="0" resource="0" file="Source/Base/LayoutManager.h"/>
-        <FILE id="UoAR0x" name="MenuManager.cpp" compile="1" resource="0" file="Source/Base/MenuManager.cpp"/>
-        <FILE id="Xt9Zca" name="MenuManager.h" compile="0" resource="0" file="Source/Base/MenuManager.h"/>
-        <FILE id="QPfD8w" name="PluginManager.cpp" compile="1" resource="0"
+        <FILE id="AdQUzq" name="MenuManager.cpp" compile="1" resource="0" file="Source/Base/MenuManager.cpp"/>
+        <FILE id="X5RgSF" name="MenuManager.h" compile="0" resource="0" file="Source/Base/MenuManager.h"/>
+        <FILE id="akxhOI" name="PluginManager.cpp" compile="1" resource="0"
               file="Source/Base/PluginManager.cpp"/>
-        <FILE id="i2j8Ti" name="PluginManager.h" compile="0" resource="0" file="Source/Base/PluginManager.h"/>
-        <FILE id="UsUjAa" name="Settings.cpp" compile="1" resource="0" file="Source/Base/Settings.cpp"/>
-        <FILE id="hmDZfu" name="Settings.h" compile="0" resource="0" file="Source/Base/Settings.h"/>
-        <FILE id="UHUDTi" name="WindowManager.cpp" compile="1" resource="0"
+        <FILE id="NPDwRf" name="PluginManager.h" compile="0" resource="0" file="Source/Base/PluginManager.h"/>
+        <FILE id="gIcih5" name="Settings.cpp" compile="1" resource="0" file="Source/Base/Settings.cpp"/>
+        <FILE id="vANdDU" name="Settings.h" compile="0" resource="0" file="Source/Base/Settings.h"/>
+        <FILE id="O41Fos" name="SplitPanelManager.cpp" compile="1" resource="0"
+              file="Source/Base/SplitPanelManager.cpp"/>
+        <FILE id="v3a03f" name="SplitPanelManager.h" compile="0" resource="0"
+              file="Source/Base/SplitPanelManager.h"/>
+        <FILE id="JfP3Bm" name="WindowManager.cpp" compile="1" resource="0"
               file="Source/Base/WindowManager.cpp"/>
-        <FILE id="Ym7Ti4" name="WindowManager.h" compile="0" resource="0" file="Source/Base/WindowManager.h"/>
+        <FILE id="V77TGS" name="WindowManager.h" compile="0" resource="0" file="Source/Base/WindowManager.h"/>
       </GROUP>
-      <GROUP id="{BEE20FD1-BA87-A3CA-5717-D04D24D91EFC}" name="Munus">
-        <FILE id="iKHvUf" name="ContextMenu.cpp" compile="1" resource="0" file="Source/Munus/ContextMenu.cpp"/>
-        <FILE id="QLcHdS" name="ContextMenu.h" compile="0" resource="0" file="Source/Munus/ContextMenu.h"/>
-        <FILE id="IJ057n" name="MainMenu.cpp" compile="1" resource="0" file="Source/Munus/MainMenu.cpp"/>
-        <FILE id="oSYtjn" name="MainMenu.h" compile="0" resource="0" file="Source/Munus/MainMenu.h"/>
-        <FILE id="hULUKM" name="ToolBarMenu.cpp" compile="1" resource="0" file="Source/Munus/ToolBarMenu.cpp"/>
-        <FILE id="nUUxvi" name="ToolBarMenu.h" compile="0" resource="0" file="Source/Munus/ToolBarMenu.h"/>
+      <FILE id="flqPJb" name="DarkTheme.cpp" compile="1" resource="0" file="Source/DarkTheme.cpp"/>
+      <GROUP id="{AE326B6F-D569-9CEB-9883-5E2459BFC237}" name="Munus">
+        <FILE id="VSYmZH" name="ContextMenu.cpp" compile="1" resource="0" file="Source/Munus/ContextMenu.cpp"/>
+        <FILE id="q8HDpF" name="ContextMenu.h" compile="0" resource="0" file="Source/Munus/ContextMenu.h"/>
+        <FILE id="zea4FL" name="MainMenu.cpp" compile="1" resource="0" file="Source/Munus/MainMenu.cpp"/>
+        <FILE id="nSrpHZ" name="MainMenu.h" compile="0" resource="0" file="Source/Munus/MainMenu.h"/>
+        <FILE id="CB0Rdu" name="ToolBarMenu.cpp" compile="1" resource="0" file="Source/Munus/ToolBarMenu.cpp"/>
+        <FILE id="UE9u1V" name="ToolBarMenu.h" compile="0" resource="0" file="Source/Munus/ToolBarMenu.h"/>
       </GROUP>
-      <GROUP id="{4A2979C5-71C9-83D0-E94A-843D717C0074}" name="Themes">
-        <FILE id="cdFhHd" name="DarkTheme.cpp" compile="1" resource="0" file="Source/Themes/DarkTheme.cpp"/>
-        <FILE id="ZRi3xA" name="DarkTheme.h" compile="0" resource="0" file="Source/Themes/DarkTheme.h"/>
+      <GROUP id="{5F1899A4-7732-F761-5076-7D445DE255E4}" name="Themes">
+        <FILE id="Ok1Y1v" name="DarkTheme.cpp" compile="1" resource="0" file="Source/Themes/DarkTheme.cpp"/>
+        <FILE id="pwhrFJ" name="DarkTheme.h" compile="0" resource="0" file="Source/Themes/DarkTheme.h"/>
       </GROUP>
-      <GROUP id="{C679BACB-1D0A-B6CA-AF62-BC0089D12E1C}" name="WindowTypes">
-        <FILE id="o5qVjy" name="ApplicationWindow.cpp" compile="1" resource="0"
+      <GROUP id="{585C50C5-1C01-5228-1C76-4EFA2A12B8FB}" name="WindowTypes">
+        <FILE id="uV31iM" name="ApplicationWindow.cpp" compile="1" resource="0"
               file="Source/WindowTypes/ApplicationWindow.cpp"/>
-        <FILE id="P8onvp" name="ApplicationWindow.h" compile="0" resource="0"
+        <FILE id="zkMdCe" name="ApplicationWindow.h" compile="0" resource="0"
               file="Source/WindowTypes/ApplicationWindow.h"/>
-        <FILE id="sxzuJq" name="DialogWindow.cpp" compile="1" resource="0"
+        <FILE id="Lu9Q2S" name="DialogWindow.cpp" compile="1" resource="0"
               file="Source/WindowTypes/DialogWindow.cpp"/>
-        <FILE id="WBuCO9" name="DialogWindow.h" compile="0" resource="0" file="Source/WindowTypes/DialogWindow.h"/>
-        <FILE id="sPYLks" name="SettingsWindow.cpp" compile="1" resource="0"
+        <FILE id="GLqkfY" name="DialogWindow.h" compile="0" resource="0" file="Source/WindowTypes/DialogWindow.h"/>
+        <FILE id="JSHMWS" name="SettingsWindow.cpp" compile="1" resource="0"
               file="Source/WindowTypes/SettingsWindow.cpp"/>
-        <FILE id="BgMV8P" name="SettingsWindow.h" compile="0" resource="0"
+        <FILE id="oSvT1q" name="SettingsWindow.h" compile="0" resource="0"
               file="Source/WindowTypes/SettingsWindow.h"/>
       </GROUP>
     </GROUP>

@@ -57,7 +57,7 @@ void Application::initialise(const String &commandLine) {
     showSplash();
 
 
-    commandManager = new ApplicationCommandManager();
+    commandManager = new CommandManager();
 
     LookAndFeel::setDefaultLookAndFeel(&darkTheme);
 
@@ -69,7 +69,7 @@ void Application::initialise(const String &commandLine) {
 
     windowManager = new WindowManager(commandManager, menuManager);
 
-    panelManager = new LayoutManager(windowManager, commandManager, menuManager);
+    panelManager = new SplitPanelManager(windowManager, commandManager, menuManager);
 
 
 }

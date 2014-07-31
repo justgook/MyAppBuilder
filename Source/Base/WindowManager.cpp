@@ -33,6 +33,7 @@ ApplicationWindow *WindowManager::createAppWindow(const String &name, Component 
 
     MainMenu *menu = menuManager->createApplicationMenu();
 
+    newAppWindow->addKeyListener(commandManager->getKeyMappings());
 
 //    #if !JUCE_MAC
     newAppWindow->setMenuBar(menu);

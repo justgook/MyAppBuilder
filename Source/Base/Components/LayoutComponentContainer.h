@@ -39,7 +39,7 @@ public:
 
 private:
 //    ScopedPointer<TabbedComponent> tabbedButtonBar;
-//    ComboBox* myComp1;
+//    ComboBox* content;
 //    ComboBox* myComp2;
 //    StretchableLayoutManager myLayout;
 private:

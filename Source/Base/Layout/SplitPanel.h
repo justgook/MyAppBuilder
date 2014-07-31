@@ -12,13 +12,28 @@
 #define SPLITPANEL_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "SplitPanelManager.h"
 
 class SplitPanel : public Component, public ApplicationCommandTarget/*, public DragAndDropTarget*/ {
 public:
-    SplitPanel();
+    enum AddTo {
+        Bottom,
+        Left,
+        Right
+    };
+    const int resizeBarSize = 10;
+
+    //TODO remove CommandManager, and move it to SplitPanelManager
+    SplitPanel( SplitPanel *parent = nullptr, bool isVertical = true);
 
     ~SplitPanel();
 
+    bool getIsVertical();
+
+    Component *getContent();
+
+    SplitPanel *getParent();
+    StretchableLayoutManager *getLayoutManager();
 
     //==================================================================================================================
     //ApplicationCommandTarget
@@ -35,9 +50,30 @@ public:
     //This must actually perform the specified command.
     bool perform(const InvocationInfo &info);
     //==================================================================================================================
+
+//    //TODO find correct minimum size
+    const double minimumSize = 100;
+    const double maximumSize = -1;
+    const double preferredSize = -0.5;
+    void resized();
+
+protected:
+
+    //TODO refactor next two methods..
+    void addChild(AddTo position, Component *content = nullptr);
+    void appendChild(AddTo position);
+    SplitPanel *findParentToAdd(AddTo position);
+
 private:
-    ScopedPointer<StretchableLayoutResizerBar> resizerBar;
+    bool isVertical;
+    ScopedPointer<Component> content;
+//    ScopedPointer<StretchableLayoutResizerBar> resizerBar;
     ScopedPointer<StretchableLayoutManager> layoutManager;
+//    OwnedArray<SplitPanel, CriticalSection> childs;
+    OwnedArray<Component, CriticalSection> childs;
+    SplitPanel* parent;
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SplitPanel);
+
 };
 
 

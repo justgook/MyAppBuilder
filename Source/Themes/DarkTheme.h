@@ -18,13 +18,16 @@ public:
     DarkTheme();
     ~DarkTheme();
 
+    Button *createTabBarExtrasButton();
+
+    void drawDraggableTabCloseButton(TabBarButton &, Graphics &, bool isMouseOver, bool isMouseDown);
+    void drawStretchableLayoutResizerBar (Graphics&, int w, int h, bool isVerticalBar, bool isMouseOver, bool isMouseDragging);
 
 private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(DarkTheme);
 
-    Button *createTabBarExtrasButton();
 
-    void drawDraggableTabCloseButton(TabBarButton &, Graphics &, bool isMouseOver, bool isMouseDown);
+
 
 };
 
