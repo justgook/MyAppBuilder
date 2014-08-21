@@ -11,45 +11,6 @@
 #include "DraggableTabbedComponent.h"
 
 
-//==============================================================================
-//class DraggableTabbedComponent::DraggableButtonBar  : public TabbedButtonBar
-//{
-//public:
-//    DraggableButtonBar (TabbedComponent& owner_, const TabbedButtonBar::Orientation orientation_)
-//            : TabbedButtonBar (orientation_),
-//              owner (owner_)
-//    {
-//    }
-//
-////    void currentTabChanged (int newCurrentTabIndex, const String& newTabName)
-////    {
-////        owner.changeCallback (newCurrentTabIndex, newTabName);
-////    }
-//
-//    void popupMenuClickOnTab (int tabIndex, const String& tabName)
-//    {
-//        owner.popupMenuClickOnTab (tabIndex, tabName);
-//    }
-////
-////    Colour getTabBackgroundColour (const int tabIndex)
-////    {
-////        return owner.tabs->getTabBackgroundColour (tabIndex);
-////    }
-////
-////    TabBarButton* createTabButton (const String& tabName, int tabIndex)
-////    {
-////        return owner.createTabButton (tabName, tabIndex);
-////    }
-//
-//private:
-//    TabbedComponent& owner;
-//
-//    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DraggableButtonBar)
-//};
-
-
-//==============================================================================
-
 
 
 DraggableTabbedComponent::DraggableTabbedComponent(TabbedButtonBar::Orientation const &orientation)
@@ -92,7 +53,7 @@ public:
                         sourceButton->getTabBackgroundColour(),
                         sourceButton->getTabbedComponent()->getTabContentComponent(sourceButton->getIndex()),
                         true);
-                sourceButton->getTabbedButtonBar().removeTab(sourceButton->getIndex());
+                sourceButton->getTabbedButtonBar().removeTab(sourceButton->getIndex(), true);
             }
         }
     }
@@ -148,7 +109,7 @@ private:
 
 //
         void mouseUp(const MouseEvent &) override {
-            ownerButton.getTabbedButtonBar().removeTab(ownerButton.getIndex());
+            ownerButton.getTabbedButtonBar().removeTab(ownerButton.getIndex(), true);
         }
 
     private:

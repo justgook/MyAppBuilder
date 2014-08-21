@@ -14,8 +14,18 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "SplitPanelManager.h"
 
-class SplitPanel : public Component, public ApplicationCommandTarget/*, public DragAndDropTarget*/ {
+class SplitPanel : public Component, public ApplicationCommandTarget, public DragAndDropTarget {
 public:
+
+    //DragAndDropTarget
+    bool isInterestedInDragSource(const SourceDetails &dragSourceDetails);
+    void itemDragMove(const SourceDetails &dragSourceDetails);
+    void itemDropped(const SourceDetails &dragSourceDetails);
+    void itemDragEnter (const SourceDetails& dragSourceDetails);
+    void itemDragExit (const SourceDetails& dragSourceDetails);
+
+
+
     enum AddTo {
         Bottom,
         Left,
@@ -24,7 +34,7 @@ public:
     const int resizeBarSize = 10;
 
     //TODO remove CommandManager, and move it to SplitPanelManager
-    SplitPanel( SplitPanel *parent = nullptr, bool isVertical = true);
+    SplitPanel(SplitPanel *parent = nullptr, bool isVertical = true);
 
     ~SplitPanel();
 
@@ -33,6 +43,7 @@ public:
     Component *getContent();
 
     SplitPanel *getParent();
+
     StretchableLayoutManager *getLayoutManager();
 
     //==================================================================================================================
@@ -55,13 +66,18 @@ public:
     const double minimumSize = 100;
     const double maximumSize = -1;
     const double preferredSize = -0.5;
+
     void resized();
 
 protected:
+    class OverlayComponent;
+    ScopedPointer<OverlayComponent> overlay;
 
     //TODO refactor next two methods..
     void addChild(AddTo position, Component *content = nullptr);
+
     void appendChild(AddTo position);
+
     SplitPanel *findParentToAdd(AddTo position);
 
 private:
@@ -71,7 +87,7 @@ private:
     ScopedPointer<StretchableLayoutManager> layoutManager;
 //    OwnedArray<SplitPanel, CriticalSection> childs;
     OwnedArray<Component, CriticalSection> childs;
-    SplitPanel* parent;
+    SplitPanel *parent;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SplitPanel);
 
 };
