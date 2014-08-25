@@ -12,57 +12,27 @@
 #define SPLITPANEL_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "SplitPanelManager.h"
 
-class SplitPanel : public Component, public ApplicationCommandTarget, public DragAndDropTarget {
+class SplitPanel : public Component {
 public:
-
-    //DragAndDropTarget
-    bool isInterestedInDragSource(const SourceDetails &dragSourceDetails);
-    void itemDragMove(const SourceDetails &dragSourceDetails);
-    void itemDropped(const SourceDetails &dragSourceDetails);
-    void itemDragEnter (const SourceDetails& dragSourceDetails);
-    void itemDragExit (const SourceDetails& dragSourceDetails);
-
-
 
     enum AddTo {
         Bottom,
         Left,
         Right
     };
-    const int resizeBarSize = 10;
 
-    //TODO remove CommandManager, and move it to SplitPanelManager
-    SplitPanel(SplitPanel *parent = nullptr, bool isVertical = true);
+    SplitPanel(Component *content, SplitPanel *parent = nullptr, bool isVertical = true);
 
     ~SplitPanel();
 
     bool getIsVertical();
 
-    Component *getContent();
-
     SplitPanel *getParent();
 
-    StretchableLayoutManager *getLayoutManager();
-
-    //==================================================================================================================
-    //ApplicationCommandTarget
-
-    //This must return the next target to try after this one.
-    ApplicationCommandTarget *getNextCommandTarget();
-
-    //This must return a complete list of commands that this target can handle.
-    void getAllCommands(Array<CommandID> &commands);
-
-    //This must provide details about one of the commands that this target can perform.
-    void getCommandInfo(CommandID commandID, ApplicationCommandInfo &result);
-
-    //This must actually perform the specified command.
-    bool perform(const InvocationInfo &info);
-    //==================================================================================================================
-
 //    //TODO find correct minimum size
+
+    const int resizeBarSize = 10;
     const double minimumSize = 100;
     const double maximumSize = -1;
     const double preferredSize = -0.5;
@@ -70,24 +40,24 @@ public:
     void resized();
 
 protected:
-    class OverlayComponent;
-    ScopedPointer<OverlayComponent> overlay;
 
     //TODO refactor next two methods..
     void addChild(AddTo position, Component *content = nullptr);
+    void appendChild(Component *content_, SplitPanel::AddTo position, int index);
 
-    void appendChild(AddTo position);
+    void removeChild(SplitPanel* child);
+    virtual SplitPanel *getChildInstance(Component *content, SplitPanel *parent, bool isVertical);
 
     SplitPanel *findParentToAdd(AddTo position);
+    Component* content;
+
 
 private:
     bool isVertical;
-    ScopedPointer<Component> content;
-//    ScopedPointer<StretchableLayoutResizerBar> resizerBar;
     ScopedPointer<StretchableLayoutManager> layoutManager;
-//    OwnedArray<SplitPanel, CriticalSection> childs;
     OwnedArray<Component, CriticalSection> childs;
     SplitPanel *parent;
+    void reorderLayoutManager();
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SplitPanel);
 
 };

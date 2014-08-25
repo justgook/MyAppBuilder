@@ -30,6 +30,10 @@
                 file="Source/Base/Components/LayoutComponentContainer.h"/>
         </GROUP>
         <GROUP id="{308682A8-16FD-ADC3-E2AD-D4B918EC3DD2}" name="Layout">
+          <FILE id="uiP7qG" name="TabbedSplitPanel.cpp" compile="1" resource="0"
+                file="Source/Base/Layout/TabbedSplitPanel.cpp"/>
+          <FILE id="DAv6jj" name="TabbedSplitPanel.h" compile="0" resource="0"
+                file="Source/Base/Layout/TabbedSplitPanel.h"/>
           <FILE id="XGuy39" name="DraggableTabbedComponent.cpp" compile="1" resource="0"
                 file="Source/Base/Layout/DraggableTabbedComponent.cpp"/>
           <FILE id="vX9w46" name="DraggableTabbedComponent.h" compile="0" resource="0"
@@ -52,7 +56,6 @@
               file="Source/Base/WindowManager.cpp"/>
         <FILE id="V77TGS" name="WindowManager.h" compile="0" resource="0" file="Source/Base/WindowManager.h"/>
       </GROUP>
-      <FILE id="flqPJb" name="DarkTheme.cpp" compile="1" resource="0" file="Source/DarkTheme.cpp"/>
       <GROUP id="{AE326B6F-D569-9CEB-9883-5E2459BFC237}" name="Munus">
         <FILE id="VSYmZH" name="ContextMenu.cpp" compile="1" resource="0" file="Source/Munus/ContextMenu.cpp"/>
         <FILE id="q8HDpF" name="ContextMenu.h" compile="0" resource="0" file="Source/Munus/ContextMenu.h"/>

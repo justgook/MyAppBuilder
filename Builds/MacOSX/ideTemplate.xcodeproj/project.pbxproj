@@ -12,6 +12,7 @@
 		1DD20399CCD4B1D68CEB6812 /* LayoutComponentContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDCDF07B16AAFABAE4065E2D /* LayoutComponentContainer.cpp */; };
 		1E93CD5EDB2235ECB5EB372D /* juce_gui_extra.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4524B2250076CE12FB229858 /* juce_gui_extra.mm */; };
 		1ED0794B231EEA204B1D81FD /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8BE4C74671C41CB4768E99 /* Accelerate.framework */; };
+		21B5A189562952469F02D692 /* TabbedSplitPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E3858690D18A396FDE132EB9 /* TabbedSplitPanel.cpp */; };
 		2C021CB9A59E66DC1C30DA1B /* MenuManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11EED4BACE3EB234375D0BE5 /* MenuManager.cpp */; };
 		2C44E53A9F237EB747AA698F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB07A13FB3D7E22E1F43C76 /* QuartzCore.framework */; };
 		2D764CB0BC6693CA660BA87F /* CommandManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6842B60E2CB64F4A973972A7 /* CommandManager.cpp */; };
@@ -44,7 +45,6 @@
 		C925EA3635531A8A59BA04E2 /* juce_graphics.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AADDAE990607F629C243336 /* juce_graphics.mm */; };
 		C99ED7D6EB816E745DD0EAC1 /* juce_cryptography.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89589AD7B79BCDDE6ED86EB9 /* juce_cryptography.mm */; };
 		CF08F585B91489F0A543C40E /* ApplicationWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB681596ACF1B8126FD48921 /* ApplicationWindow.cpp */; };
-		D21265FBC6ECDFECB1537D1E /* DarkTheme.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7543A67F8B7E342D84EA31E2 /* DarkTheme.cpp */; };
 		D5DAD6B567BE29B292BE6F46 /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 092AFD9B6222FB6A61610C88 /* Settings.cpp */; };
 		DAA12F245B6D5FE11F5BB5C4 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1C342105E96F56F3959D7B /* QTKit.framework */; };
 		DE263E6DBB0480B84A052108 /* SplitPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8B651672FA6D145B4A4C136F /* SplitPanel.cpp */; };
@@ -472,7 +472,6 @@
 		73A9F749529A953FC757FE1C /* juce_ComponentPeer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_ComponentPeer.cpp; path = ../../JuceLibraryCode/modules/juce_gui_basics/windows/juce_ComponentPeer.cpp; sourceTree = SOURCE_ROOT; };
 		73B0AB307619C410B558CDC5 /* juce_OpenGLGraphicsContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_OpenGLGraphicsContext.h; path = ../../JuceLibraryCode/modules/juce_opengl/opengl/juce_OpenGLGraphicsContext.h; sourceTree = SOURCE_ROOT; };
 		7465DBF090628E1A401944BB /* juce_FileSearchPathListComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_FileSearchPathListComponent.h; path = ../../JuceLibraryCode/modules/juce_gui_basics/filebrowser/juce_FileSearchPathListComponent.h; sourceTree = SOURCE_ROOT; };
-		7543A67F8B7E342D84EA31E2 /* DarkTheme.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DarkTheme.cpp; path = ../../Source/DarkTheme.cpp; sourceTree = SOURCE_ROOT; };
 		7577160CEA90CA49549F82D6 /* juce_QuickTimeAudioFormat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_QuickTimeAudioFormat.cpp; path = ../../JuceLibraryCode/modules/juce_audio_formats/codecs/juce_QuickTimeAudioFormat.cpp; sourceTree = SOURCE_ROOT; };
 		7638BB5A68C429C080E41BAA /* juce_InputStream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_InputStream.cpp; path = ../../JuceLibraryCode/modules/juce_core/streams/juce_InputStream.cpp; sourceTree = SOURCE_ROOT; };
 		76DA7FA96F8BD26D9BD06B0B /* juce_TextDragAndDropTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_TextDragAndDropTarget.h; path = ../../JuceLibraryCode/modules/juce_gui_basics/mouse/juce_TextDragAndDropTarget.h; sourceTree = SOURCE_ROOT; };
@@ -719,6 +718,7 @@
 		B93CCA556E3EF188A6613C95 /* juce_ApplicationCommandManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_ApplicationCommandManager.h; path = ../../JuceLibraryCode/modules/juce_gui_basics/commands/juce_ApplicationCommandManager.h; sourceTree = SOURCE_ROOT; };
 		B97B496C44EA208E0DD47D69 /* juce_GlowEffect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_GlowEffect.cpp; path = ../../JuceLibraryCode/modules/juce_graphics/effects/juce_GlowEffect.cpp; sourceTree = SOURCE_ROOT; };
 		B97D58111BC38DD5E6FFAFFA /* juce_MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_MD5.h; path = ../../JuceLibraryCode/modules/juce_cryptography/hashing/juce_MD5.h; sourceTree = SOURCE_ROOT; };
+		B9A8511684B2634B666E4FCD /* TabbedSplitPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TabbedSplitPanel.h; path = ../../Source/Base/Layout/TabbedSplitPanel.h; sourceTree = SOURCE_ROOT; };
 		B9B8588B8AE63BEE2264569E /* juce_ActionListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_ActionListener.h; path = ../../JuceLibraryCode/modules/juce_events/broadcasters/juce_ActionListener.h; sourceTree = SOURCE_ROOT; };
 		B9CC49C76C6DBADFF5353BB5 /* juce_LookAndFeel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_LookAndFeel.h; path = ../../JuceLibraryCode/modules/juce_gui_basics/lookandfeel/juce_LookAndFeel.h; sourceTree = SOURCE_ROOT; };
 		BA27DFA9E278AC565B2B0309 /* juce_MemoryOutputStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_MemoryOutputStream.h; path = ../../JuceLibraryCode/modules/juce_core/streams/juce_MemoryOutputStream.h; sourceTree = SOURCE_ROOT; };
@@ -854,6 +854,7 @@
 		E31C20AB9E7AD8CBBD4E6124 /* juce_AbstractFifo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_AbstractFifo.cpp; path = ../../JuceLibraryCode/modules/juce_core/containers/juce_AbstractFifo.cpp; sourceTree = SOURCE_ROOT; };
 		E335E1BB409BA66211467DB1 /* juce_CoreAudioFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_CoreAudioFormat.h; path = ../../JuceLibraryCode/modules/juce_audio_formats/codecs/juce_CoreAudioFormat.h; sourceTree = SOURCE_ROOT; };
 		E37977532AF151501D1E546C /* juce_MenuBarModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_MenuBarModel.cpp; path = ../../JuceLibraryCode/modules/juce_gui_basics/menus/juce_MenuBarModel.cpp; sourceTree = SOURCE_ROOT; };
+		E3858690D18A396FDE132EB9 /* TabbedSplitPanel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TabbedSplitPanel.cpp; path = ../../Source/Base/Layout/TabbedSplitPanel.cpp; sourceTree = SOURCE_ROOT; };
 		E39AF87F098830B52B12C8E5 /* juce_BigInteger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_BigInteger.cpp; path = ../../JuceLibraryCode/modules/juce_core/maths/juce_BigInteger.cpp; sourceTree = SOURCE_ROOT; };
 		E3BA41DCE74F5E062E45C1C9 /* juce_NamedPipe.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_NamedPipe.cpp; path = ../../JuceLibraryCode/modules/juce_core/network/juce_NamedPipe.cpp; sourceTree = SOURCE_ROOT; };
 		E3C47DBE2446328838FF8C90 /* juce_NSViewComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_NSViewComponent.h; path = ../../JuceLibraryCode/modules/juce_gui_extra/embedding/juce_NSViewComponent.h; sourceTree = SOURCE_ROOT; };
@@ -2106,7 +2107,6 @@
 				D758DCD0CDAF025A33C755E6 /* Application.cpp */,
 				12A7F70487C5EF954F217FEA /* Application.h */,
 				EA16C8CF399F37A58C33575D /* Base */,
-				7543A67F8B7E342D84EA31E2 /* DarkTheme.cpp */,
 				289CA339535A4DFE67319A09 /* Munus */,
 				DEB32899A061B51ACE711C33 /* Themes */,
 				4B7F1F8FC74E1E52AD8C78EB /* WindowTypes */,
@@ -2305,6 +2305,8 @@
 		BC59B7B954776A76F3B637D7 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				E3858690D18A396FDE132EB9 /* TabbedSplitPanel.cpp */,
+				B9A8511684B2634B666E4FCD /* TabbedSplitPanel.h */,
 				5168C2653D2312821769E447 /* DraggableTabbedComponent.cpp */,
 				07A4C62D96DB6023A36740CD /* DraggableTabbedComponent.h */,
 				8B651672FA6D145B4A4C136F /* SplitPanel.cpp */,
@@ -2820,6 +2822,7 @@
 				2D764CB0BC6693CA660BA87F /* CommandManager.cpp in Sources */,
 				948859E5A030C6F50C782F11 /* KeyMappingPanel.cpp in Sources */,
 				1DD20399CCD4B1D68CEB6812 /* LayoutComponentContainer.cpp in Sources */,
+				21B5A189562952469F02D692 /* TabbedSplitPanel.cpp in Sources */,
 				60CC1478F98610D604150D8A /* DraggableTabbedComponent.cpp in Sources */,
 				DE263E6DBB0480B84A052108 /* SplitPanel.cpp in Sources */,
 				2C021CB9A59E66DC1C30DA1B /* MenuManager.cpp in Sources */,
@@ -2827,7 +2830,6 @@
 				D5DAD6B567BE29B292BE6F46 /* Settings.cpp in Sources */,
 				7A00EF4830B44709151CB371 /* SplitPanelManager.cpp in Sources */,
 				B0E89BBB4526EFDFA6793FC4 /* WindowManager.cpp in Sources */,
-				D21265FBC6ECDFECB1537D1E /* DarkTheme.cpp in Sources */,
 				1121F34DC5847258F59C53D8 /* ContextMenu.cpp in Sources */,
 				E8BFCB174A3CC2EBBDA11935 /* MainMenu.cpp in Sources */,
 				EB20AC012F020AF83AF4A7EE /* ToolBarMenu.cpp in Sources */,

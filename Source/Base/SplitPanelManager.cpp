@@ -9,7 +9,7 @@
 */
 
 #include "SplitPanelManager.h"
-#include "SplitPanel.h"
+#include "TabbedSplitPanel.h"
 
 
 SplitPanelManager::~SplitPanelManager() {
@@ -27,22 +27,18 @@ SplitPanelManager::SplitPanelManager(WindowManager *wm, CommandManager *commandM
         DBG("SOMETHIG GOES REALLY WROMG (TODO ADD SOME KIND OF ERROR DISPLAY / REPPORT)");
     }
 
-    SplitPanel *layout = new SplitPanel(nullptr, false);
-    commandManager->registerAllCommandsForTarget(layout);
+    SplitPanel *layout = new TabbedSplitPanel(nullptr, false);
+//    commandManager->registerAllCommandsForTarget(layout);
 
     topLevelPanels.add(layout); //holds top level panels, for each window
     wm->createAppWindow("From SplitPanelManager", layout);
 
+//    Component::getCurrentlyFocusedComponent();
+//    getParentComponent ()
+
 }
 
-StretchableLayoutManager *SplitPanelManager::getLayoutManagers(SplitPanel &panel) {
-    return nullptr;
-}
 
 void SplitPanelManager::childAdded(SplitPanel *panel) {
-    SplitPanel *parent = panel;
-    while(parent != nullptr && parent->getIsVertical() != panel->getIsVertical()) {
-        parent = panel->getParent();
-    }
-//    topLevelPanels.add(panel);
+
 }

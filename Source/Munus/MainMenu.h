@@ -20,8 +20,8 @@ public:
     ~MainMenu();
     PopupMenu extraAppleMenuItems;
     StringArray getMenuBarNames();
-    PopupMenu getMenuForIndex (int /*topLevelMenuIndex*/, const String& menuName);
-    void menuItemSelected (int menuItemID, int /*topLevelMenuIndex*/);
+    PopupMenu getMenuForIndex(int topLevelMenuIndex, const String &menuName);
+    void menuItemSelected (int menuItemID, int topLevelMenuIndex);
 private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainMenu);
 

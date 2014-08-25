@@ -26,7 +26,6 @@ public:
     SplitPanelManager(WindowManager *wm, CommandManager *cm, MenuManager *mm);
 
     ~SplitPanelManager();
-    StretchableLayoutManager* getLayoutManagers(SplitPanel &panel);
     void childAdded(SplitPanel *panel);
 //    LayoutComponentContainer *addTestPanel(const String &name);
       //TODO add way to be able close itself ant check if there is need to close window

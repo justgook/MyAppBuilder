@@ -31,10 +31,27 @@ StringArray MainMenu::getMenuBarNames() {
     return StringArray (names);
 }
 
-PopupMenu MainMenu::getMenuForIndex(int i, const String &menuName) {
-    return PopupMenu();
+PopupMenu MainMenu::getMenuForIndex(int topLevelMenuIndex, const String &menuName) {
+//    DBG("get menus");
+    PopupMenu m;
+    m.addItem (1, "item 1");
+    m.addItem (2, "item 2");
+//    const int result = m.show();
+//    if (result == 0)
+//    {
+//        // user dismissed the menu without picking anything
+//    }
+//    else if (result == 1)
+//    {
+//        // user picked item 1
+//    }
+//    else if (result == 2)
+//    {
+//        // user picked item 2
+//    }
+    return m;
 }
 
-void MainMenu::menuItemSelected(int menuItemID, int i) {
+void MainMenu::menuItemSelected(int menuItemID, int topLevelMenuIndex) {
 
 }
