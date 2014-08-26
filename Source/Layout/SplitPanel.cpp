@@ -84,7 +84,7 @@ void SplitPanel::appendChild(Component *content_, SplitPanel::AddTo position, in
         childs.add(child);
         addAndMakeVisible(child);
     }
-    //TODO find way how to update Item index (argument[1])
+
     //TODO remove resizeBars from childs
     StretchableLayoutResizerBar *resizeBar = new StretchableLayoutResizerBar(layoutManager, childs.size(), !isVertical);
     SplitPanel *child = getChildInstance(content_, this, isVertical);
@@ -107,11 +107,9 @@ void SplitPanel::appendChild(Component *content_, SplitPanel::AddTo position, in
             childs.insert(index, child);
             break;
     }
-    reorderLayoutManager();
-//    layoutManager->setItemLayout(childs.size() - 2, resizeBarSize, resizeBarSize, resizeBarSize);
-//    layoutManager->setItemLayout(childs.size() - 1, minimumSize, maximumSize, preferredSize);
-//    addAndMakeVisible(resizeBar);
+
     addAndMakeVisible(child);
+    reorderLayoutManager();
     resized();
 }
 
@@ -125,7 +123,15 @@ void SplitPanel::resized() {
 }
 
 void SplitPanel::removeChild(SplitPanel *child) {
+    int itemIndex = childs.indexOf(child);
+    if (itemIndex != childs.size() - 1) { // if last there is no resize bar
+        //Deleting resizeBar
+        childs.remove (itemIndex + 1, true);
+    }
+    //Deleting panel itself
+    childs.remove (itemIndex, true);
     reorderLayoutManager();
+    resized();
 }
 
 SplitPanel *SplitPanel::getChildInstance(Component *content_, SplitPanel *parent_, bool isVertical_) {

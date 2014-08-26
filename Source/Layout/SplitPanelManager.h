@@ -20,16 +20,29 @@
 #include "CommandManager.h"
 class SplitPanel;  //TODO finde better solution that recreation of class
 
-class SplitPanelManager {
+class SplitPanelManager: public ApplicationCommandTarget {
 public:
 
     SplitPanelManager(WindowManager *wm, CommandManager *cm, MenuManager *mm);
 
     ~SplitPanelManager();
     void childAdded(SplitPanel *panel);
-//    LayoutComponentContainer *addTestPanel(const String &name);
-      //TODO add way to be able close itself ant check if there is need to close window
-//    bool tryToCloseDocument(Component *component);
+    //==================================================================================================================
+    //ApplicationCommandTarget
+
+    //This must return the next target to try after this one.
+    ApplicationCommandTarget *getNextCommandTarget();
+
+    //This must return a complete list of commands that this target can handle.
+    void getAllCommands(Array<CommandID> &commands);
+
+    //This must provide details about one of the commands that this target can perform.
+    void getCommandInfo(CommandID commandID, ApplicationCommandInfo &result);
+
+    //This must actually perform the specified command.
+    bool perform(const InvocationInfo &info);
+    //==================================================================================================================
+
 private:
 //    OwnedArray<ApplicationWindow, CriticalSection> appWindows;
 

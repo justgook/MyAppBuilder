@@ -27,7 +27,7 @@ MainMenu::~MainMenu() {
 }
 
 StringArray MainMenu::getMenuBarNames() {
-    const char* const names[] = { "File", "Edit", "View",  "Tools", "Window", "Help", nullptr };
+    const char* const names[] = { "File", "Edit", "View", "Navigate", "Tools", "Window", "Help", nullptr };
     return StringArray (names);
 }
 

@@ -1,18 +1,11 @@
 /*
   ==============================================================================
 
-    PluginManager.h
-    Created: 22 Jul 2014 6:13:34pm
+    ApplicationSettings.cpp
+    Created: 26 Aug 2014 12:49:11pm
     Author:  Roman Potashow
 
   ==============================================================================
 */
 
-#ifndef PLUGINMANAGER_H_INCLUDED
-#define PLUGINMANAGER_H_INCLUDED
-
-
-
-
-
-#endif  // PLUGINMANAGER_H_INCLUDED
+#include "ApplicationSettings.h"

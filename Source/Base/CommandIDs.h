@@ -15,9 +15,10 @@
 namespace CommandIDs {
     enum {
         //panel Spliting
-        splitBottom = 0x2001,
-        splitLeft = 0x2002,
-        splitRight = 0x2003
+        addPanel = 0x2001
+//        splitBottom = 0x2001,
+//        splitLeft = 0x2002,
+//        splitRight = 0x2003
 
 //        newProject = 0x200010,
 //        open = 0x200020,
