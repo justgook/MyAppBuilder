@@ -14,7 +14,7 @@
 CommandManager::CommandManager():ApplicationCommandManager() {}
 
 
-const CommandID CommandManager::getNextCommandID(const String &commandName) {
+CommandID CommandManager::getCommandId(const String &commandName) {
     if (!commandsMapping.contains(commandName)) {
         commandsMapping.set(commandName, ++lastCommandID);
     }
@@ -22,3 +22,12 @@ const CommandID CommandManager::getNextCommandID(const String &commandName) {
 }
 
 
+ApplicationCommandTarget *CommandManager::getNextRegisteredManager(ApplicationCommandTarget *target) {
+    return managers[managers.indexOf(target) + 1];
+}
+
+void CommandManager::registerManager(ApplicationCommandTarget *target) {
+    ApplicationCommandManager::registerAllCommandsForTarget(target);
+    managers.insert(0, target);
+    setFirstCommandTarget(target);
+}

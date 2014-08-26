@@ -10,10 +10,12 @@
 
 #include "PluginManager.h"
 
-PluginManager::PluginManager() {
-
-}
 
 PluginManager::~PluginManager() {
 
+}
+
+
+PluginManager::PluginManager(CommandManager *commandManager, MenuManager *menuManager, LayoutManager *layoutManager) {
+//    commandManager->registerAllCommandsForTarget(this);
 }

@@ -13,12 +13,13 @@
 Component *mockData() {
     TabbedComponent *tabsHolder = new DraggableTabbedComponent(TabbedButtonBar::Orientation::TabsAtTop);
 //    tabsHolder->addTab("1", Colours::red, new Label("a1", "vsdv"), true, -1);
-    tabsHolder->addTab("4567899", Colours::beige, new Label("a1", "dcaxsvv"), true, -1);
-    tabsHolder->addTab("3dasdas", Colours::bisque, new Label("a1", "vcv cx "), true, -1);
+    tabsHolder->addTab("4567899", Colours::beige, new TextEditor("a1"), true, -1);
+    tabsHolder->addTab("3dasdas", Colours::bisque, new TextEditor("a1"), true, -1);
     tabsHolder->addTab("4dasdas", Colours::rosybrown, new Label("a1", "vxcvcx xxc "), true, -1);
     tabsHolder->addTab("5dasdas", Colours::black, new Label("a1", "zvzx sc edsf2ewdv"), true, -1);
     tabsHolder->addTab("6dasdas", Colours::blue, new Label("a1", "dsvx dczv eds "), true, -1);
     tabsHolder->addTab("7dasdas", Colours::firebrick, new Label("a1", "sfxdsxvcds dv esv edfc efd"), true, -1);
+    tabsHolder->setWantsKeyboardFocus(true);
     return tabsHolder;
 };
 

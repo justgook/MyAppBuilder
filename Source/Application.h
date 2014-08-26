@@ -7,11 +7,14 @@
 #define __Application_H_
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "WindowManager.h"
 #include "DarkTheme.h"
-#include "SplitPanelManager.h"
 
-
+#include "CommandManager.h"
+#include "MenuManager.h"
+#include "WindowManager.h"
+#include "LayoutManager.h"
+#include "SettingsManager.h"
+#include "PluginManager.h"
 
 class Application : public JUCEApplication {
 
@@ -46,9 +49,11 @@ private:
     // those pointers and objects will be cleared automatically
     ScopedPointer<CommandManager> commandManager;
     ScopedPointer<MenuManager> menuManager;
-    //object that hold all instances of Window attached to desktop, but have same other logic... (for not to duplicate instances of any useless listeners - command Manager, keys..)
     ScopedPointer<WindowManager> windowManager;
-    ScopedPointer<SplitPanelManager> panelManager;
+    ScopedPointer<LayoutManager> layoutManager;
+    ScopedPointer<SettingsManager> settingsManager;
+
+    ScopedPointer<PluginManager> pluginManager;
 private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Application);
 

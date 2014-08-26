@@ -20,7 +20,7 @@ void Application::anotherInstanceStarted(const String &commandLine) {
     // this method is invoked, and the commandLine parameter tells you what
     // the other instance's command-line arguments were.
     DBG("Crating new instance of Application with CLI args (" << commandLine <<")");
-    //TODO change name based on some Build Settings
+    //TODO change name based on some Build SettingsManager
 //    windowManager->createAppWindow(<#initializer#>, nullptr);
 }
 
@@ -58,19 +58,20 @@ void Application::initialise(const String &commandLine) {
 
 
     commandManager = new CommandManager();
-
     LookAndFeel::setDefaultLookAndFeel(&darkTheme);
 
-
-    commandManager->registerAllCommandsForTarget(this);
-//    DBG(commandManager->getNumCommands());
 
     menuManager = new MenuManager(commandManager);
 
     windowManager = new WindowManager(commandManager, menuManager);
 
-    panelManager = new SplitPanelManager(windowManager, commandManager, menuManager);
+    layoutManager = new LayoutManager(windowManager, commandManager, menuManager);
 
+    pluginManager = new PluginManager(commandManager, menuManager, layoutManager);
+
+    settingsManager = new SettingsManager(commandManager);
+
+//    commandManager->registerAllCommandsForTarget(this);
 
 }
 

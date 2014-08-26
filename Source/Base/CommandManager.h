@@ -15,10 +15,12 @@
 class CommandManager : public ApplicationCommandManager {
 public:
     CommandManager();
-    const CommandID getNextCommandID(const String &commandName);
+    CommandID getCommandId(const String &commandName);
+    void registerManager(ApplicationCommandTarget *target);
+    ApplicationCommandTarget*getNextRegisteredManager(ApplicationCommandTarget *target);
 private:
-
-    CommandID lastCommandID = 0;
+    Array<ApplicationCommandTarget*> managers;
+    CommandID lastCommandID = 0x2101;
     HashMap<String, CommandID> commandsMapping;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(CommandManager);
 

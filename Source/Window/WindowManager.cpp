@@ -16,12 +16,12 @@ WindowManager::WindowManager(ApplicationCommandManager *cm, MenuManager *mm) {
 }
 
 WindowManager::~WindowManager() {
-//#if !JUCE_MAC
-//    setMenuBar (nullptr);
-//#endif
-//#if JUCE_MAC
-//    MenuBarModel::setMacMainMenu(nullptr);
-//#endif
+#if !JUCE_MAC
+    setMenuBar (nullptr);
+#endif
+#if JUCE_MAC
+    MenuBarModel::setMacMainMenu(nullptr);
+#endif
 }
 
 
@@ -35,12 +35,12 @@ ApplicationWindow *WindowManager::createAppWindow(const String &name, Component 
 
     newAppWindow->addKeyListener(commandManager->getKeyMappings());
 
-//    #if !JUCE_MAC
+#if !JUCE_MAC
     newAppWindow->setMenuBar(menu);
-//    #endif
-//    #if JUCE_MAC
-//        MenuBarModel::setMacMainMenu(menu, &menu->extraAppleMenuItems, "Open Recent");
-//    #endif
+    #endif
+#if JUCE_MAC
+    MenuBarModel::setMacMainMenu(menu, &menu->extraAppleMenuItems, "Open Recent");
+#endif
 
 //    content
     appWindows.add(newAppWindow);

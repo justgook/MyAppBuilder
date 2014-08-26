@@ -8,14 +8,16 @@
   ==============================================================================
 */
 
+#include "WindowManager.h"
+#include "CommandManager.h"
+#include "LayoutManager.h"
+
 #ifndef PLUGINMANAGER_H_INCLUDED
 #define PLUGINMANAGER_H_INCLUDED
-class PluginManager{
-    PluginManager();
+class PluginManager {
+public:
+    PluginManager(CommandManager *commandManager, MenuManager *menuManager, LayoutManager* layoutManager);
     ~PluginManager();
 };
-
-
-
 
 #endif  // PLUGINMANAGER_H_INCLUDED

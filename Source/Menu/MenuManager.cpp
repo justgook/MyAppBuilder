@@ -10,7 +10,7 @@
 
 #include "MenuManager.h"
 
-MenuManager::MenuManager(ApplicationCommandManager *cm) {
+MenuManager::MenuManager(CommandManager *cm) {
     commandManager = cm;
 //    setApplicationCommandManagerToWatch(cm);
 }
@@ -25,10 +25,3 @@ MainMenu *MenuManager::createApplicationMenu() {
     applicationMainMenus.add(mainMenu);
     return mainMenu;
 }
-
-//MainMenu *MenuManager::createApplicationMenu() {
-//    //TODO add default list of menus.
-//    MainMenu *mainMenu = new MainMenu(commandManager);
-//    applicationMainMenus.add(mainMenu);
-//    return mainMenu;
-//}
