@@ -49,9 +49,9 @@ ApplicationWindow *WindowManager::createAppWindow(const String &name, Component 
 }
 
 
-DialogWindow *WindowManager::createDialogWindow() {
+DialogWindow *WindowManager::createDialogWindow(Component *content) {
     DialogWindow::LaunchOptions options;
-//    options.content.setOwned (valueTreesDemo);
+    options.content.setOwned(content);
     options.dialogTitle = "Dialog Window";
 //    options.dialogBackgroundColour        = Colour (0xff0e345a);
     options.escapeKeyTriggersCloseButton = false;
@@ -61,6 +61,7 @@ DialogWindow *WindowManager::createDialogWindow() {
 //    const RectanglePlacement placement (RectanglePlacement::xRight + RectanglePlacement::yBottom + RectanglePlacement::doNotResize);
 
     DialogWindow *dw = options.launchAsync();
+    //TODO check what size is really needed
     dw->centreWithSize(800, 600);
     return dw;
 }

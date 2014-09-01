@@ -27,7 +27,7 @@ public:
     ApplicationWindow *createAppWindow(const String &name, Component *content);
     int getApplicationWindowCount();
 
-    DialogWindow *createDialogWindow();
+    DialogWindow *createDialogWindow(Component *content);
 
 private:
 //    struct Project {

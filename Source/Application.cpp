@@ -69,7 +69,7 @@ void Application::initialise(const String &commandLine) {
 
     pluginManager = new PluginManager(commandManager, menuManager, layoutManager);
 
-    settingsManager = new SettingsManager(commandManager);
+    settingsManager = new SettingsManager(commandManager, windowManager);
 
 //    commandManager->registerAllCommandsForTarget(this);
 

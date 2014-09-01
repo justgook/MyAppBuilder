@@ -19,3 +19,7 @@ PluginManager::~PluginManager() {
 PluginManager::PluginManager(CommandManager *commandManager, MenuManager *menuManager, LayoutManager *layoutManager) {
 //    commandManager->registerAllCommandsForTarget(this);
 }
+
+Plugin *PluginManager::getPluginByName(String string) {
+    return nullptr;
+}

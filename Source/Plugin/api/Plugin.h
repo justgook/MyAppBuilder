@@ -11,10 +11,12 @@
 #ifndef PLUGIN_H_INCLUDED
 #define PLUGIN_H_INCLUDED
 
+#include "ApplicationPluginCommunication.h"
 class Plugin {
 public:
-    virtual ~Plugin() {}
+//    virtual ~Plugin() {}
     virtual void getPanel() = 0;
+
 };
 
 

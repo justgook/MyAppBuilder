@@ -3,10 +3,12 @@
 
 #include "JuceHeader.h"
 #include "CommandManager.h"
+#include "WindowManager.h"
+#include "SettingsPanel.h"
 
 class SettingsManager : public ApplicationCommandTarget {
 public:
-    SettingsManager(CommandManager *commandManager);
+    SettingsManager(CommandManager *commandManager, WindowManager *windowManager);
 
     ~SettingsManager();
     //==================================================================================================================
@@ -25,8 +27,11 @@ public:
     bool perform(const InvocationInfo &info);
     //==================================================================================================================
 private:
+    ScopedPointer<SettingsPanel> settingsPanel;
     // Pointer to applicationCommandManager that is created and deleted in main application - here it is to ba able to point to it.
-    CommandManager * commandManager;
+    CommandManager *commandManager;
+    WindowManager *windowManager;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SettingsManager)
 };
 
