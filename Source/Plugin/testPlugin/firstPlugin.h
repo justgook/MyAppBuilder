@@ -13,12 +13,20 @@
 #ifndef FIRSTPLUGIN_H_INCLUDED
 #define FIRSTPLUGIN_H_INCLUDED
 
-#import "Plugin.h"
+#include "../../juce/JuceLibraryCode/JuceHeader.h"
 
-class firstPlugin: public Plugin {
+#include "../api/Plugin.h"
+
+class firstPlugin : public Plugin {
+
+public:
+    firstPlugin(ApplicationPluginCommunication *communication) : Plugin(communication) {
+    }
+
+private:
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (firstPlugin);
 
 };
-
 
 
 #endif  // FIRSTPLUGIN_H_INCLUDED

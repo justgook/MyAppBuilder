@@ -11,35 +11,51 @@
 #ifndef SETTINGSPANEL_H_INCLUDED
 #define SETTINGSPANEL_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
-#include "FormBuilder.h"
+#include "../../juce/JuceLibraryCode/JuceHeader.h"
+#include "SettingsContentFactory.h"
+#include "SettingsManagerInterface.h"
 
 class SettingsPanel : public Component {
 
 public:
-    SettingsPanel();
+    SettingsPanel(SettingsManagerInterface *settingsManager);
+
     ~SettingsPanel();
+
     void resized();
 
-//    ~SettingsPanel();
+protected:
+
+    TreeViewItem *treeRootItem;
+
 private:
     class SearchInput;
-    class ApplicationSettingsTree;
+
     const int resizeBarSize = 10;
+
+    class ContentChangerListener : public Value::Listener {
+    public:
+        ContentChangerListener(SettingsContentFactory *rightPanel_) : rightPanel(rightPanel_) {
+        }
+        void valueChanged(Value &value) {
+            rightPanel->updateContentFor(value.toString());
+        }
+
+    private:
+        SettingsContentFactory *rightPanel;
+    };
+
+
+    SettingsManagerInterface *settingsManager;
     ScopedPointer<StretchableLayoutManager> layoutManager;
-    SearchInput* searchInput;
-    FormBuilder* settingsDisplay;
+    SearchInput *searchInput;
+//    FormBuilder* settingsDisplay;
     TreeView resultsTree;
-
     //    TextEditor* searchInput;
-    Component* leftPanel;
-    StretchableLayoutResizerBar* resizerBar;
-    Component* rightPanel;
-
-//    ScopedPointer<Viewport> leftPanelViewport;
-//    ScopedPointer<Viewport> rightPanel;
-//    TreeView tree;
-//    ScopedPointer<TreeViewItem> treeItem;
+    Component *leftPanel;
+    StretchableLayoutResizerBar *resizerBar;
+    SettingsContentFactory *rightPanel;
+    Value selectedPlugin;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SettingsPanel);
 
 };

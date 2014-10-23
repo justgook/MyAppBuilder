@@ -13,11 +13,11 @@
 #ifndef PANELMANER_H_INCLUDED
 #define PANELMANER_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
-#include "WindowManager.h"
-#include "LayoutComponentContainer.h"
+#include "../../juce/JuceLibraryCode/JuceHeader.h"
+#include "../Window/WindowManager.h"
+#include "../Base/Components/LayoutComponentContainer.h"
 #include "DraggableTabbedComponent.h"
-#include "CommandManager.h"
+#include "../Base/CommandManager.h"
 
 class SplitPanel;  //TODO finde better solution that recreation of class
 

@@ -10,7 +10,7 @@
 
 #include "LayoutManager.h"
 #include "TabbedSplitPanel.h"
-#include "CommandIDs.h"
+#include "../Base/CommandIDs.h"
 
 
 LayoutManager::~LayoutManager() {
@@ -45,7 +45,7 @@ void LayoutManager::childAdded(SplitPanel *panel) {
 }
 
 ApplicationCommandTarget *LayoutManager::getNextCommandTarget() {
-    DBG("LayoutManager::getNextCommandTarget");
+//    DBG("LayoutManager::getNextCommandTarget");
     return commandManager->getNextRegisteredManager(this);
 }
 
@@ -55,7 +55,7 @@ void LayoutManager::getAllCommands(Array<CommandID> &commands) {
 }
 
 void LayoutManager::getCommandInfo(CommandID commandID, ApplicationCommandInfo &result) {
-    DBG("LayoutManager::getCommandInfo");
+//    DBG("LayoutManager::getCommandInfo");
     switch (commandID) {
         case CommandIDs::addPanel:
             result.setInfo(TRANS ("Split horizontally"), TRANS ("Splits current panel in two parts horizontally"), CommandCategories::edit, 0);

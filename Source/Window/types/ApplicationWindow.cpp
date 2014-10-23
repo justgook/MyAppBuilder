@@ -3,7 +3,6 @@
 //
 
 #include "ApplicationWindow.h"
-#include "LayoutComponentContainer.h"
 //#include "LayoutComponentContainer.h"
 
 ApplicationWindow::ApplicationWindow(String const &name, Component *content)

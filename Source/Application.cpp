@@ -58,7 +58,7 @@ void Application::initialise(const String &commandLine) {
 
 
     commandManager = new CommandManager();
-    LookAndFeel::setDefaultLookAndFeel(&darkTheme);
+
 
 
     menuManager = new MenuManager(commandManager);
@@ -67,11 +67,17 @@ void Application::initialise(const String &commandLine) {
 
     layoutManager = new LayoutManager(windowManager, commandManager, menuManager);
 
-    pluginManager = new PluginManager(commandManager, menuManager, layoutManager);
-
     settingsManager = new SettingsManager(commandManager, windowManager);
 
+    pluginManager = new PluginManager(settingsManager);
+
+    projectManager = new ProjectManager(pluginManager, settingsManager);
+//ExtraLookAndFeelBaseClasses
+    LookAndFeel::setDefaultLookAndFeel(&darkTheme);
 //    commandManager->registerAllCommandsForTarget(this);
+
+    //TODO DELETE next lines
+    commandManager->invokeDirectly(commandManager->getCommandId("open settings"), true);
 
 }
 

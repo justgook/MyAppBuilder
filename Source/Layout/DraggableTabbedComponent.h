@@ -11,7 +11,7 @@
 #ifndef DRAGGABLETABBEDCOMPONENT_H_INCLUDED
 #define DRAGGABLETABBEDCOMPONENT_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "../../juce/JuceLibraryCode/JuceHeader.h"
 
 
 class DraggableTabbedComponent : public TabbedComponent/*, public DragAndDropTarget*/ {

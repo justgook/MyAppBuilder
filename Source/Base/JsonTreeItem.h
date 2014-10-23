@@ -11,7 +11,7 @@
 #ifndef JSONTREEITEM_H_INCLUDED
 #define JSONTREEITEM_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "../../juce/JuceLibraryCode/JuceHeader.h"
 
 class JsonTreeItem : public TreeViewItem {
 public:
@@ -77,7 +77,9 @@ public:
             // your application.
         }
     }
-
+    void itemSelectionChanged (bool isNowSelected){
+        DBG("JsonTreeItem::itemSelectionChanged");
+    }
 private:
     Identifier identifier;
     var json;

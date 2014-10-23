@@ -11,7 +11,7 @@
 #ifndef KEYMAPPINGPANEL_H_INCLUDED
 #define KEYMAPPINGPANEL_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "../../juce/JuceLibraryCode/JuceHeader.h"
 
 class KeyMappingsDemo : public Component {
 private:

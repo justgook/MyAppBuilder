@@ -10,7 +10,7 @@
 
 #ifndef COMMANDMANAGER_H_INCLUDED
 #define COMMANDMANAGER_H_INCLUDED
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "../../juce/JuceLibraryCode/JuceHeader.h"
 
 class CommandManager : public ApplicationCommandManager {
 public:

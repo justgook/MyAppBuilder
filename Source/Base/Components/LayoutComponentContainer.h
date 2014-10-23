@@ -11,7 +11,8 @@
 #ifndef PANEL_H_INCLUDED
 #define PANEL_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "../../../juce/JuceLibraryCode/JuceHeader.h"
+//TODO delete me att all
 
 class LayoutComponentContainer : public Component {
 
@@ -22,7 +23,7 @@ public:
 
     String getName();
 
-    Image *getIcon(); //TODO change to return some Image based on "pluginSettings"
+    Image *getIcon(); //TODO change to return some Image based on "settings"
     MenuBarModel *getSettingsMenu();
 
     // Dragging Component

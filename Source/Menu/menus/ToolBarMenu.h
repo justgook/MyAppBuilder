@@ -12,7 +12,7 @@
 #ifndef TOOLBARMENU_H_INCLUDED
 #define TOOLBARMENU_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "../../juce/JuceLibraryCode/JuceHeader.h"
 
 
 class ToolBarMenu : public Toolbar {

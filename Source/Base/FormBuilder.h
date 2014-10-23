@@ -11,45 +11,40 @@
 #ifndef FORMBUILDER_H_INCLUDED
 #define FORMBUILDER_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
-
-static Array<PropertyComponent *> createTextEditors() {
-    Array<PropertyComponent *> comps;
-
-    comps.add(new BooleanPropertyComponent(Value("This is a single-line Text Property"), "yes", ""));
-    comps.add(new TextPropertyComponent(Value("This is a single-line Text Property"), "Text 1", 200, false));
-    comps.add(new TextPropertyComponent(Value("Another one"), "Text 2", 200, false));
-
-    comps.add(new TextPropertyComponent(Value(
-                    "Lorem ipsum dolor sit amet, cu mei labore admodum facilisi. Iriure iuvaret invenire ea vim, cum quod"
-                            "si intellegat delicatissimi an. Cetero recteque ei eos, his an scripta fastidii placerat. Nec et anc"
-                            "illae nominati corrumpit. Vis dictas audire accumsan ad, elit fabulas saperet mel eu.\n"
-                            "\n"
-                            "Dicam utroque ius ne, eum choro phaedrum eu. Ut mel omnes virtute appareat, semper quodsi labitur in"
-                            " cum. Est aeque eripuit deleniti in, amet ferri recusabo ea nec. Cu persius maiorum corrumpit mei, i"
-                            "n ridens perpetua mea, pri nobis tation inermis an. Vis alii autem cotidieque ut, ius harum salutatu"
-                            "s ut. Mel eu purto veniam dissentias, malis doctus bonorum ne vel, mundi aperiam adversarium cu eum."
-                            " Mei quando graeci te, dolore accusata mei te."),
-            "Multi-line text",
-            1000, true));
-
-    return comps;
-};
-
+#include "../../juce/JuceLibraryCode/JuceHeader.h"
 
 class FormBuilder : public Component {
 public:
+    void addBoolField(const Value &valueToControl,
+            const String &propertyName) {
+        childs.add(new BooleanPropertyComponent(valueToControl, propertyName, ""));
+    };
+
+    void addIntField(const Value &valueToControl,
+            const String &propertyName) {
+        childs.add(new SliderPropertyComponent(valueToControl, propertyName, 0, 100, 1));
+    };
+
+    void addDoubleField(const Value &valueToControl,
+            const String &propertyName) {
+        childs.add(new SliderPropertyComponent(valueToControl, propertyName, 0, 10, 0.1));
+    };
+
+    void addTextField(const Value &valueToControl,
+            const String &propertyName) {
+        childs.add(new TextPropertyComponent(valueToControl, propertyName, 128, false));
+    };
+
+    void addTextAreaField(const Value &valueToControl,
+            const String &propertyName,
+            int maxNumChars = 1024) {
+        childs.add(new TextPropertyComponent(valueToControl, propertyName, maxNumChars, true));
+    };
+
+
     FormBuilder() {
         setOpaque(true);
-
         addAndMakeVisible(&propertyPanel);
-
-
-        propertyPanel.addProperties(createTextEditors());
-        propertyPanel.addSection("Fiew Fields", createTextEditors());
-//        propertyPanel.addSection ("Sliders", createSliders (3));
-//        propertyPanel.addSection ("Choice Properties", createChoices (6));
-//        propertyPanel.addSection ("Buttons & Toggles", createButtons (3));
     }
 
 //    becouse setOpaque (true); need to reimplement paint function
@@ -57,13 +52,23 @@ public:
         g.fillAll(Colour::greyLevel(0.8f));
     }
 
+    void renderContent() {
+        propertyPanel.clear();
+        if (childs.size() > 0) {
+            propertyPanel.addProperties(childs);
+            childs.clear();
+        }
+    }
+
     void resized() override {
         propertyPanel.setBounds(getLocalBounds().reduced(4));
     }
 
-private:
+protected:
     PropertyPanel propertyPanel;
 
+private:
+    Array<PropertyComponent *> childs;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FormBuilder);
 };
 

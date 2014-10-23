@@ -7,7 +7,7 @@
 #define __Window_H_
 
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "../../../juce/JuceLibraryCode/JuceHeader.h"
 
 //TODO Look To - MultiDocumentPanelWindow
 class ApplicationWindow : public DocumentWindow/*, public ApplicationCommandTarget*/ {

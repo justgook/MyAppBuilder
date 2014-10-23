@@ -13,9 +13,9 @@
 #ifndef MENUMANAGER_H_INCLUDED
 #define MENUMANAGER_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
-#include "MainMenu.h"
-#include "CommandManager.h"
+#include "../../juce/JuceLibraryCode/JuceHeader.h"
+#include "menus/MainMenu.h"
+#include "../Base/CommandManager.h"
 
 
 class MenuManager {

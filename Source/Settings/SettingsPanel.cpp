@@ -9,7 +9,7 @@
 */
 
 #include "SettingsPanel.h"
-#include "JsonTreeItem.h"
+#include "SettingsTreeViewItem.h"
 
 //class SettingsTreeViewItem : public TreeViewItem {
 //
@@ -30,8 +30,9 @@ public:
     };
 };
 
-SettingsPanel::SettingsPanel() {
-    DBG("SettingsPanel::SettingsPanel");
+SettingsPanel::SettingsPanel(SettingsManagerInterface *settingsManager_) : settingsManager(settingsManager_) {
+
+//    DBG("SettingsPanel::SettingsPanel");
     layoutManager = new StretchableLayoutManager();
     setSize(100, 100);
     layoutManager->setItemLayout(0, 100, -1, -0.5);
@@ -40,36 +41,31 @@ SettingsPanel::SettingsPanel() {
 
     leftPanel = new Component();
     resizerBar = new StretchableLayoutResizerBar(layoutManager, 1, true);
-    rightPanel = new FormBuilder();
+    rightPanel = new SettingsContentFactory(settingsManager);
 
     searchInput = new SearchInput();
 
     leftPanel->addAndMakeVisible(searchInput);
-    searchInput->setBounds("0, 0, parent.width - 100, 25");
+    searchInput->setBounds("0, 0, parent.width, 25");
 
 
 
-    /** Parses the editors contects as JSON. */
-    var parsedJson;
-    Result result = JSON::parse("{\"test\":[\"a\"]}", parsedJson);
+    //Creare tree
+    //========================================================================
+//    selectedPlugin = "root";
+    selectedPlugin.addListener(new ContentChangerListener(rightPanel));
 
-//        if (! result.wasOk())
-//        {
-//            return nullptr;
-//        }
+    treeRootItem = new SettingsTreeViewItem(settingsManager->getSettingsList(), selectedPlugin);
 
-    resultsTree.setRootItem(new JsonTreeItem(Identifier(), parsedJson));
-    resultsTree.setBounds("0, 25, parent.width , parent.height - 25");
-
+    resultsTree.setRootItem(treeRootItem);
     leftPanel->addAndMakeVisible(&resultsTree);
+    resultsTree.setBounds("0, 25, parent.width , parent.height - 25");
     rightPanel->setSize(100, 100);
     resultsTree.setColour(TreeView::backgroundColourId, Colours::white);
     resultsTree.setRootItemVisible(false);
     resultsTree.setBounds(0, 25, 200, 200);
 //    resultsTree.setDefaultOpenness (true);
-
-    TextPropertyComponent *text = new TextPropertyComponent(Value("This is a single-line Text Property"), "Text 1", 200, false);
-    rightPanel->addAndMakeVisible(text);
+    //========================================================================
     addAndMakeVisible(leftPanel);
     addAndMakeVisible(resizerBar);
     addAndMakeVisible(rightPanel);
@@ -85,4 +81,6 @@ SettingsPanel::~SettingsPanel() {
     delete resizerBar;
     delete rightPanel;
     delete searchInput;
+    delete treeRootItem;
 }
+

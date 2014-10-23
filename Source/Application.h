@@ -6,15 +6,16 @@
 #ifndef __Application_H_
 #define __Application_H_
 
-#include "../JuceLibraryCode/JuceHeader.h"
-#include "DarkTheme.h"
+#include "../juce/JuceLibraryCode/JuceHeader.h"
+#include "Themes/DarkTheme.h"
 
-#include "CommandManager.h"
-#include "MenuManager.h"
-#include "WindowManager.h"
-#include "LayoutManager.h"
-#include "SettingsManager.h"
-#include "PluginManager.h"
+#include "Base/CommandManager.h"
+#include "Menu/MenuManager.h"
+#include "Window/WindowManager.h"
+#include "Layout/LayoutManager.h"
+#include "Settings/SettingsManager.h"
+#include "Plugin/PluginManager.h"
+#include "Project/ProjectManager.h"
 
 class Application : public JUCEApplication {
 
@@ -51,9 +52,12 @@ private:
     ScopedPointer<MenuManager> menuManager;
     ScopedPointer<WindowManager> windowManager;
     ScopedPointer<LayoutManager> layoutManager;
+    ScopedPointer<PluginManager> pluginManager;
     ScopedPointer<SettingsManager> settingsManager;
 
-    ScopedPointer<PluginManager> pluginManager;
+    ScopedPointer<ProjectManager> projectManager;
+
+
 private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Application);
 

@@ -11,7 +11,7 @@
 #ifndef DARKTHEME_H_INCLUDED
 #define DARKTHEME_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "../../juce/JuceLibraryCode/JuceHeader.h"
 
 class DarkTheme : public LookAndFeel_V3 {
 public:

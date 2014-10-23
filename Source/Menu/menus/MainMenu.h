@@ -11,7 +11,7 @@
 #ifndef MAINMENU_H_INCLUDED
 #define MAINMENU_H_INCLUDED
 
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "../../../juce/JuceLibraryCode/JuceHeader.h"
 
 class MainMenu : public MenuBarModel {
 public:

@@ -12,9 +12,9 @@
 #ifndef __WindowManager_H_
 #define __WindowManager_H_
 
-#include "../JuceLibraryCode/JuceHeader.h"
-#include "ApplicationWindow.h"
-#include "MenuManager.h"
+#include "../../juce/JuceLibraryCode/JuceHeader.h"
+#include "types/ApplicationWindow.h"
+#include "../Menu/MenuManager.h"
 
 
 class WindowManager {
